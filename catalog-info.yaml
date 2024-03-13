@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: grateful-bat-nodejs-gitops
+  description: This is GitOps manifest for grateful-bat-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: grateful-bat-nodejs
+    janus-idp.io/tekton: grateful-bat-nodejs 
+    backstage.io/kubernetes-id: grateful-bat-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:grateful-bat-nodejs

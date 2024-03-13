@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: grateful-bat-nodejs
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: grateful-bat-nodejs 
+  name: grateful-bat-nodejs
+spec:
+  ports:
+  - port: 3001 
+    targetPort: 3001 
+  selector:
+    app.kubernetes.io/instance: grateful-bat-nodejs 
